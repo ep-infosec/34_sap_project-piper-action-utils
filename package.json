@@ -1,0 +1,41 @@
+{
+  "author": "SAP SE (https://www.sap.com)",
+  "description": "A utils library for the piper github action",
+  "devDependencies": {
+    "@types/node": "^14.14.14",
+    "@typescript-eslint/eslint-plugin": "^4.10.0",
+    "@typescript-eslint/parser": "^4.10.0",
+    "eslint": "^7.15.0",
+    "ts-jest": "^26.4.4",
+    "ts-node": "^9.1.1",
+    "typescript": "^4.1.2"
+  },
+  "license": "Apache 2.0",
+  "main": "./dist/index.js",
+  "repository": "github:sap/project-piper-action-utils",
+  "types": "dist/index.d.ts",
+  "name": "@sap/project-piper-action-utils",
+  "scripts": {
+    "lint": "npx eslint src/**",
+    "prebuild": "npx eslint && rm -rf ./dist",
+    "build": "npx tsc",
+    "start": "node ./dist/index.js",
+    "prestart": "npm run build"
+  },
+  "jest": {
+    "verbose": true
+  },
+  "files": [
+    "dist/**",
+    "LICENSE",
+    "README.md"
+  ],
+  "version": "1.0.2",
+  "dependencies": {
+    "@actions/artifact": "^0.4.1",
+    "@actions/core": "^1.2.6",
+    "@actions/glob": "^0.1.1",
+    "@actions/tool-cache": "^1.6.1",
+    "axios": "^0.21.1"
+  }
+}
